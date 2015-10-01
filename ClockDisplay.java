@@ -25,7 +25,7 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         meridian = "AM";
         updateDisplay();
@@ -38,7 +38,7 @@ public class ClockDisplay
      */
     public ClockDisplay(int hour, int minute, String mer)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         meridian = mer;
         setTime(hour, minute);
@@ -82,7 +82,7 @@ public class ClockDisplay
     private void updateDisplay()
     {
         String tempHours = "";
-        if ((hours.getValue() == 0) || (hours.getValue() == 12)) {
+        if ((hours.getValue() == 0)) {
             tempHours = "12";
             if (meridian.contains("AM"))
                 meridian = "PM";
